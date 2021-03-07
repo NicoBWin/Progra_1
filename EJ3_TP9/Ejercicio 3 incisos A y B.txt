@@ -1,0 +1,6 @@
+A)  El objetivo de la función es sumar recursivamente todos los dígitos de un número
+decimal natural sin importar su longitud. 
+
+B)  El programa no funciona porque falta analizar el caso base. La función se 
+ejecutará muchas veces hasta llenar la memoria de stack, generando un segmentation 
+fault y nuncá devolverá un resultado.

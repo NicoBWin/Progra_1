@@ -1,0 +1,116 @@
+#include <stdio.h>
+#define OFFSET 		32
+#define N 			40
+#define NO_ERROR 	0
+#define ERROR 		1
+#define EQU			1
+#define DIF 		0
+int lect (int*);
+void BubbleSort(int[], int);
+void clearbuffer();
+void comp (int*, int*, int, int);
+int main (void){
+	int pal_1[N];
+	int pal_2[N]; 
+	int*p1=pal_1;
+	int*p2=pal_2;
+	printf("Por favor ingrese la primer palabra:\n");
+	int cant1=lect(p1);
+	printf("Por favor ingrese la segunda palabra:\n");
+	int cant2=lect(p2);
+	BubbleSort (pal_1, cant1);
+	BubbleSort (pal_2, cant2);
+	comp(p1,p2,cant1,cant2);
+	//BubbleSort(mat, sizeof(mat)/sizeof(float));
+/*	for (int i=0; i<cant1 ; i++){	
+		printf ("%c\n", pal_1[i]);
+	}
+	printf ("\n");
+	for (int i=0; i<cant2 ; i++){	
+		printf ("%c\n", pal_2[i]);
+	}
+*/	
+	
+}
+void BubbleSort (int a[], int cant){
+	int temp;
+	for (int j=0; j<cant-1; j++){
+		for (int i=0; i<cant-1; i++){	
+			//printf ("%c, %c\n", a[i],a[i+1]);
+			if (a[i]>a[i+1]){
+				temp= a[i];
+				a [i]=a[i+1];
+				a[i+1]=temp;
+			}
+			//printf ("%c, %c\n", a[i],a[i+1]);
+		}
+	}
+}
+
+int lect (int *point){
+	int *p=point;
+	int error=NO_ERROR;
+	int cont=0;
+	int c;
+	do{	
+		error=NO_ERROR;
+		while ((c=getchar()) != '\n' && error!=ERROR && cont<N){
+			//printf ("%d",c);
+			if (c>='A' && c<='Z'){
+				c=c+OFFSET;		
+			}
+			if (c>='a' && c<='z'){
+				*p++=c;
+				cont++;
+			}
+			else{
+				error=ERROR;
+				clearbuffer();
+				cont=0;
+				p=point;
+				printf("La palabra ingresada contiene caracteres incorrectos. \nPor favor vuelva a ingresarla:\n");
+			}
+		}
+		if (cont>=N){
+			printf ("Se excedio de la cantidad de caracteres maximo. \nPor favor vuelva a ingresarla:\n");
+			error=ERROR;
+			clearbuffer();
+			cont=0;
+			p=point;
+		}
+	}	
+	while (error==ERROR);
+	return cont;	
+}
+
+void clearbuffer (){
+	while (getchar() != '\n');	//mientras que no apriete enter
+	
+}
+
+
+void comp(int *p1, int *p2, int cant1, int cant2){
+	int estado=EQU;
+	int cont=0;
+	for (int i=0; i<cant2; i++){
+		for (int j=0; *p2 != *p1 && j<cant1-cont; j++){
+						
+			p1++;	
+		}
+	//	printf("P1: %d\n", *p1);
+	//	printf("P2: %d\n", *p2);
+		if (*p1!=*p2){
+			estado=DIF;
+	//		printf ("dif\n");
+		}
+		p1++;		
+		p2++;
+		cont++;
+	}
+	if (estado==EQU){
+		printf ("suuuuu\n");	
+	}
+	else{
+		printf ("no\n");
+	}
+}

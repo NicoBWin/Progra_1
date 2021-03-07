@@ -1,0 +1,11 @@
+Funciones y division de tareas:
+    - void copyMat(int originalMat[][MAT_SIZE], int copiedMat[][MAT_SIZE], int filas, int columnas)
+        Copia en una nueva matriz Mcopy cada elemento de M.
+    - int aliveNeighbors (int M[][MAT_SIZE], int x, int y, int fils, int cols)
+        Calcula la cant de vecinos vivos de la celula de M[x][y].
+    * void newGeneration(int originalMat[][MAT_SIZE], int filas, int columnas)       
+        Genera la nueva generación de la matriz mat1. 
+    - void cellNewState(int originalMat[][MAT_SIZE], int copiedMat[][MAT_SIZE], int x, int y, int filas, int columnas)
+        Guarda en mat[x][y] el nuevo estado de la celula.
+    - void showresult(int mat[][MAT_SIZE],int filas, int columnas)
+        Muestra por consola mat[][] de forma linda.

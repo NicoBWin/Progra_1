@@ -1,0 +1,6 @@
+// Cosas para tener en cuenta y poner en comun
+
+#define MAT_SIZE    N   //Tamaño máximo de la matriz (ancho = alto)
+
+#define ALIVE   1   // Constantes para los estados de las células
+#define DEAD    0

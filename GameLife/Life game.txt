@@ -1,0 +1,26 @@
+Funciones:
+	MANAGER: BUSTELO (main)
+	LOGICA: BASILI SHERMAN
+	LECTURA-MOSTRAME ESTA: SHEMBE AMIEL 
+	
+	1) LECTURA: 
+		a) Se ingresa por teclado el tamaño de la matriz. (get_world_size(void))
+		b) Se ingresa por teclado fila a fila de la matriz separando con "\n".	(initialize_world(void))
+		c) Se ingresa la cantidad de generaciones a correr.
+		d) Si se aprieta "q" para salir.
+
+	2) LOGICA:
+		a) Hacer una copia de la matriz. (updatemat();)
+		b) Determinar la cant de vecinos vivos tiene la celula.	(neighbors(int x, int y))
+			i) función que determine si me estoy saliendo de la matriz. (check_neighbor(int x,int y))
+		c) Determinar el nuevo estado de la celula. (set_cell_state(int x, int y, int state))
+		d) void finalize_evolution(int generaciones);
+		e) void next_generation(int mat[][], int size)
+
+	3) MOSTRADO:
+		a) Mostrar la matriz resultado en la terminal. (void output_world(void);)
+
+	4) UTILIDADES:
+
+ - Tener en cuenta
+	- En el main, unificar todos los usos de llaves, parénteis y corchetes
